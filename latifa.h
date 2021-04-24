@@ -2,6 +2,8 @@
 #include <cs50.h>
 #include <math.h>
 #include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
 
 int count_letters(string t)
 {
