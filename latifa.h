@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+typedef char *string;
+
 // Gets an integer from the user
 int get_int(void)
 {
