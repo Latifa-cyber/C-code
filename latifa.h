@@ -1,11 +1,39 @@
 #include <stdio.h>
-#include <cs50.h>
 #include <math.h>
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
 
-int count_letters(string t)
+// Gets an integer from the user
+int get_int(void)
+{
+    int i;
+    printf("Please enter an integer: ");
+    scanf("%i",&i);
+    return i;
+}
+
+// Gets a float from the user
+float get_float(void)
+{
+    float f;
+    printf("Please enter a float: ");
+    scanf("%f",&f);
+    return f;
+}
+
+// Gets a word from the user
+char* get_word(void)
+{
+    char *w = malloc(8);
+    printf("Please enter a word: ");
+    scanf("%s",w);
+    return w;
+    free(w);
+}
+
+// Counts letters that user types 
+int count_letters(char* t)
 {
     int i = 0;
     int letters = 0;
@@ -20,7 +48,8 @@ int count_letters(string t)
     return letters;
 }
 
-int count_words(string t)
+// Counts words that user types
+int count_words(char* t)
 {
     int i = 0;
     int w = 1;
@@ -32,7 +61,8 @@ int count_words(string t)
     return w;
 }
 
-int count_sentences(string t)
+// Counts sentences that user types
+int count_sentences(char* t)
 {
     int i = 0;
     int sent = 0;
@@ -47,6 +77,7 @@ int count_sentences(string t)
     return sent;
 }
 
+// Counts the average of an array of integers
 float average(int length, int array[])
      {
          int sum = 0;
@@ -57,12 +88,14 @@ float average(int length, int array[])
          return sum / (float) length;
      }
 
+// Prompt user for positive integer
 int get_positive_int()
 {
     int p;
     do
     {
-        p = get_int("Positive Integer: ");
+        printf("Please enter a positive integer: ");
+        p = get_int();
     }
     while (p < 1);
     return p;
@@ -73,9 +106,14 @@ int get_negative_int()
     int n;
     do
     {
-        n = get_int("Negative Integer: ");
+        printf("Please enter a negative integer: ");
+        n = get_int();
     }
     while (n >= 0);
     return n;
 }
+
+
+
+
 
